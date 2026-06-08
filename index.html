@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Patrick Inanod — E-Commerce Video Editor & Ops Specialist</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a1a; min-height: 100vh; }
+  .wrap { max-width: 860px; margin: 0 auto; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.07); }
+
+  /* HERO */
+  .hero { background: #1A5C3A; padding: 2.5rem 2.5rem 2rem; }
+  .hero-initials { width: 56px; height: 56px; border-radius: 50%; background: #2E7D52; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: #A8D5BC; margin-bottom: 1.1rem; }
+  .hero-name { font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 5px; letter-spacing: -0.01em; }
+  .hero-title { font-size: 14px; color: #A8D5BC; margin-bottom: 1.1rem; }
+  .hero-bio { font-size: 13.5px; color: #C8E6D4; line-height: 1.65; max-width: 600px; margin-bottom: 1.4rem; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .badge { font-size: 11.5px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
+  .badge-g { background: #2E7D52; color: #A8D5BC; }
+  .badge-a { background: #854F0B; color: #FAC775; }
+  .badge-b { background: #185FA5; color: #B5D4F4; }
+
+  /* CONTACT BAR */
+  .contact-bar { background: #0F3D27; padding: 0.65rem 2.5rem; display: flex; flex-wrap: wrap; gap: 20px; }
+  .contact-item { font-size: 12.5px; color: #6BAF8A; display: flex; align-items: center; gap: 6px; text-decoration: none; }
+  .contact-item:hover { color: #A8D5BC; }
+
+  /* TABS */
+  .nav-tabs { display: flex; border-bottom: 1px solid #e8e8e8; padding: 0 2.5rem; background: #fff; overflow-x: auto; }
+  .nav-tab { font-size: 13.5px; padding: 0.9rem 1.1rem; color: #888; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.15s; }
+  .nav-tab:hover { color: #1A5C3A; }
+  .nav-tab.active { color: #1A5C3A; border-bottom-color: #1A5C3A; font-weight: 500; }
+
+  /* TAB CONTENT */
+  .tab-content { padding: 2rem 2.5rem; display: none; }
+  .tab-content.active { display: block; }
+
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #aaa; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f0f0f0; }
+
+  /* PORTFOLIO GRID */
+  .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 2rem; }
+  .p-card { background: #fff; border: 1px solid #efefef; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+  .p-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .p-thumb { height: 100px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
+  .p-thumb-g { background: #EAF3DE; }
+  .p-thumb-b { background: #E6F1FB; }
+  .p-thumb-a { background: #FAEEDA; }
+  .p-thumb-gray { background: #f7f7f5; border-bottom: 1px dashed #ddd; flex-direction: column; gap: 4px; }
+  .p-meta { padding: 0.75rem 0.9rem; }
+  .p-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #bbb; margin-bottom: 4px; }
+  .p-title { font-size: 13.5px; font-weight: 500; color: #1a1a1a; margin-bottom: 4px; }
+  .p-desc { font-size: 12px; color: #777; line-height: 1.5; }
+  .p-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: #1A5C3A; margin-top: 8px; text-decoration: none; font-weight: 500; }
+  .p-link:hover { text-decoration: underline; }
+  .coming-label { font-size: 11px; color: #bbb; }
+
+  /* APPROACH GRID */
+  .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+  .a-card { background: #f7faf8; border-radius: 10px; padding: 1rem; }
+  .a-card-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+  .a-card-desc { font-size: 12px; color: #666; line-height: 1.55; }
+
+  /* OPS GRID */
+  .ops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 2rem; }
+  .ops-card { background: #f7faf8; border-radius: 10px; padding: 1rem; }
+  .ops-card-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+  .ops-card-desc { font-size: 12px; color: #666; line-height: 1.55; }
+
+  /* EXPERIENCE */
+  .exp-row { display: flex; gap: 14px; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #f0f0f0; }
+  .exp-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
+  .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: #2E7D52; flex-shrink: 0; }
+  .exp-line { width: 1px; background: #e8e8e8; flex: 1; margin-top: 5px; }
+  .exp-role { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+  .exp-co { font-size: 13px; color: #2E7D52; font-weight: 500; margin-bottom: 3px; }
+  .exp-yr { font-size: 11.5px; color: #aaa; margin-bottom: 8px; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .exp-tag { font-size: 11px; padding: 2px 9px; border-radius: 10px; background: #f0f0f0; color: #666; }
+
+  /* CHIPS */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
+  .chip { font-size: 12px; padding: 4px 12px; border-radius: 20px; border: 1px solid #e8e8e8; color: #555; background: #fafafa; }
+  .chip-g { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; }
+  .chip-a { background: #FAEEDA; border-color: #FAC775; color: #854F0B; }
+  .chip-b { background: #E6F1FB; border-color: #B5D4F4; color: #185FA5; }
+
+  /* FOOTER */
+  .footer { background: #1A5C3A; padding: 1.25rem 2.5rem; text-align: center; }
+  .footer p { font-size: 12.5px; color: #6BAF8A; }
+
+  @media (max-width: 600px) {
+    .hero, .contact-bar, .tab-content, .nav-tabs { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero-name { font-size: 1.4rem; }
+    .portfolio-grid, .ops-grid, .approach-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 420px) {
+    .portfolio-grid, .ops-grid, .approach-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-initials">JPI</div>
+    <h1 class="hero-name">John Patrick Inanod</h1>
+    <p class="hero-title">E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
+    <p class="hero-bio">I combine e-commerce operations experience with conversion-focused video ad creatives. Most editors don't understand how a DTC brand runs. Most ops specialists can't produce content. I do both — which means I can support your brand end to end.</p>
+    <div class="badge-row">
+      <span class="badge badge-g">Meta &amp; TikTok ads</span>
+      <span class="badge badge-g">Amazon A+ content</span>
+      <span class="badge badge-g">UGC-style creatives</span>
+      <span class="badge badge-b">Shopify operations</span>
+      <span class="badge badge-b">Inventory &amp; catalog</span>
+      <span class="badge badge-a">AI-assisted editing</span>
+    </div>
+  </div>
+
+  <div class="contact-bar">
+    <a class="contact-item" href="mailto:johnpatrick_inanod@yahoo.com"><i class="ti ti-mail"></i>johnpatrick_inanod@yahoo.com</a>
+    <a class="contact-item" href="tel:+639794244259"><i class="ti ti-phone"></i>+63 979-424-42-59</a>
+    <a class="contact-item" href="https://www.linkedin.com/in/john-patrick-inanod-11828b206/" target="_blank"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+  </div>
+
+  <div class="nav-tabs">
+    <div class="nav-tab active" onclick="showTab('video', this)">Video editing</div>
+    <div class="nav-tab" onclick="showTab('ops', this)">E-commerce ops</div>
+    <div class="nav-tab" onclick="showTab('exp', this)">Experience</div>
+    <div class="nav-tab" onclick="showTab('tools', this)">Tools &amp; skills</div>
+  </div>
+
+  <!-- VIDEO TAB -->
+  <div id="tab-video" class="tab-content active">
+    <p class="section-label">Ad creatives portfolio</p>
+    <div class="portfolio-grid">
+      <div class="p-card">
+        <div class="p-thumb p-thumb-g"><i class="ti ti-device-mobile" style="font-size:2rem;color:#3B6D11"></i></div>
+        <div class="p-meta">
+          <div class="p-tag">Meta / TikTok · 15–30 sec</div>
+          <div class="p-title">Skincare product ad</div>
+          <div class="p-desc">Hook-driven, problem-solution structure. Vertical 9:16 format.</div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb p-thumb-b"><i class="ti ti-video" style="font-size:2rem;color:#185FA5"></i></div>
+        <div class="p-meta">
+          <div class="p-tag">UGC-style · 30–45 sec</div>
+          <div class="p-title">Authentic product review</div>
+          <div class="p-desc">Casual, unpolished-on-purpose. Built to look like organic content.</div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb p-thumb-a"><i class="ti ti-shopping-bag" style="font-size:2rem;color:#854F0B"></i></div>
+        <div class="p-meta">
+          <div class="p-tag">Amazon listing · 30–60 sec</div>
+          <div class="p-title">Product listing video</div>
+          <div class="p-desc">Clean, benefit-focused. Formatted to Amazon A+ standards.</div>
+        </div>
+      </div>
+      <div class="p-card">
+        <div class="p-thumb p-thumb-gray">
+          <i class="ti ti-plus" style="font-size:1.5rem;color:#ccc"></i>
+          <span class="coming-label">Coming soon</span>
+        </div>
+        <div class="p-meta">
+          <div class="p-tag">YouTube pre-roll · 30–60 sec</div>
+          <div class="p-title">YouTube ad creative</div>
+          <div class="p-desc">Skippable format. Earns attention before the skip button appears.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-label">How I approach ad creatives</p>
+    <div class="approach-grid">
+      <div class="a-card">
+        <div class="a-card-title"><i class="ti ti-bolt" style="font-size:16px;color:#2E7D52"></i>Hook first</div>
+        <div class="a-card-desc">Every edit starts with the first 3 seconds. If it doesn't stop the scroll, nothing else matters.</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-title"><i class="ti ti-arrows-right-left" style="font-size:16px;color:#2E7D52"></i>Problem → solution</div>
+        <div class="a-card-desc">Structure every video around a clear problem the buyer recognizes, then the product as the answer.</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-title"><i class="ti ti-layers-difference" style="font-size:16px;color:#2E7D52"></i>Multi-format repurposing</div>
+        <div class="a-card-desc">One raw video → Meta ad, TikTok Reel, Amazon listing, YouTube pre-roll. Different structure per platform.</div>
+      </div>
+      <div class="a-card">
+        <div class="a-card-title"><i class="ti ti-chart-line" style="font-size:16px;color:#2E7D52"></i>Conversion first</div>
+        <div class="a-card-desc">I edit for CTR and CVR, not aesthetics. Every second should move the viewer closer to a decision.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OPS TAB -->
+  <div id="tab-ops" class="tab-content">
+    <p class="section-label">What I can handle for your store</p>
+    <div class="ops-grid">
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-package" style="font-size:16px;color:#2E7D52"></i>Order &amp; fulfillment</div>
+        <div class="ops-card-desc">End-to-end order processing, status updates, fulfillment bottleneck resolution for high-volume storefronts.</div>
+      </div>
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-layout" style="font-size:16px;color:#2E7D52"></i>Shopify storefront</div>
+        <div class="ops-card-desc">Product page editing, blog content, high-converting templates, mobile responsiveness across markets.</div>
+      </div>
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-chart-bar" style="font-size:16px;color:#2E7D52"></i>Reporting &amp; data</div>
+        <div class="ops-card-desc">Operational records, performance documentation, weekly ecommerce performance reports.</div>
+      </div>
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-box" style="font-size:16px;color:#2E7D52"></i>Inventory control</div>
+        <div class="ops-card-desc">Stock monitoring, demand forecasting, out-of-stock prevention across product lines.</div>
+      </div>
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-upload" style="font-size:16px;color:#2E7D52"></i>Catalog management</div>
+        <div class="ops-card-desc">Bulk CSV uploads, variant management, category mapping, product data accuracy.</div>
+      </div>
+      <div class="ops-card">
+        <div class="ops-card-title"><i class="ti ti-search" style="font-size:16px;color:#2E7D52"></i>SEO optimization</div>
+        <div class="ops-card-desc">Meta titles, descriptions, image Alt-text optimization for organic ranking and visibility.</div>
+      </div>
+    </div>
+    <p class="section-label">Platforms &amp; tools</p>
+    <div class="chip-row">
+      <span class="chip chip-b">Shopify</span>
+      <span class="chip chip-b">Ecomflow</span>
+      <span class="chip chip-b">Quickbooks</span>
+      <span class="chip chip-b">Notion</span>
+      <span class="chip chip-b">ClickUp</span>
+      <span class="chip chip-a">ChatGPT</span>
+      <span class="chip chip-a">Adobe Firefly</span>
+      <span class="chip chip-a">NanoBanana</span>
+      <span class="chip chip-a">Instantly.ai</span>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE TAB -->
+  <div id="tab-exp" class="tab-content">
+    <p class="section-label">Work history</p>
+    <div class="exp-row">
+      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+      <div>
+        <div class="exp-role">Ecommerce Operations Associate</div>
+        <div class="exp-co">Enord LT</div>
+        <div class="exp-yr">2024 – 2025</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Order processing</span>
+          <span class="exp-tag">Shopify</span>
+          <span class="exp-tag">Storefront optimization</span>
+          <span class="exp-tag">SOPs</span>
+          <span class="exp-tag">Performance reporting</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
+      <div>
+        <div class="exp-role">Virtual Assistant</div>
+        <div class="exp-co">Chazak Virtual Solutions</div>
+        <div class="exp-yr">2024</div>
+        <div class="exp-tags">
+          <span class="exp-tag">SEO strategy</span>
+          <span class="exp-tag">Inventory control</span>
+          <span class="exp-tag">Catalog management</span>
+          <span class="exp-tag">CSV bulk uploads</span>
+        </div>
+      </div>
+    </div>
+    <div class="exp-row">
+      <div class="exp-dot-col"><div class="exp-dot"></div></div>
+      <div>
+        <div class="exp-role">Customer Service Representative</div>
+        <div class="exp-co">Foundever, Inc</div>
+        <div class="exp-yr">2022 – 2023</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Multi-channel support</span>
+          <span class="exp-tag">Retention &amp; conversion</span>
+          <span class="exp-tag">Email / live chat / social</span>
+        </div>
+      </div>
+    </div>
+    <p class="section-label" style="margin-top:1.75rem">Education</p>
+    <div class="exp-row" style="border:none;margin:0;padding:0">
+      <div class="exp-dot-col"><div class="exp-dot"></div></div>
+      <div>
+        <div class="exp-role">BS Information Technology</div>
+        <div class="exp-co">Philippine Christian University</div>
+        <div class="exp-yr">2008 – 2011</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOOLS TAB -->
+  <div id="tab-tools" class="tab-content">
+    <p class="section-label">Video editing</p>
+    <div class="chip-row">
+      <span class="chip chip-g">CapCut</span>
+      <span class="chip chip-g">DaVinci Resolve</span>
+      <span class="chip chip-g">Descript</span>
+    </div>
+    <p class="section-label">AI tools</p>
+    <div class="chip-row">
+      <span class="chip chip-a">HeyGen</span>
+      <span class="chip chip-a">Runway</span>
+      <span class="chip chip-a">Pika</span>
+      <span class="chip chip-a">ChatGPT</span>
+      <span class="chip chip-a">Adobe Firefly</span>
+      <span class="chip chip-a">NanoBanana</span>
+      <span class="chip chip-a">Instantly.ai</span>
+    </div>
+    <p class="section-label">E-commerce ops</p>
+    <div class="chip-row">
+      <span class="chip chip-b">Shopify</span>
+      <span class="chip chip-b">Ecomflow</span>
+      <span class="chip chip-b">Quickbooks</span>
+      <span class="chip chip-b">Notion</span>
+      <span class="chip chip-b">ClickUp</span>
+    </div>
+    <p class="section-label">Soft skills</p>
+    <div class="chip-row">
+      <span class="chip">Analytical thinking</span>
+      <span class="chip">Written communication</span>
+      <span class="chip">Problem solving</span>
+      <span class="chip">Time management</span>
+      <span class="chip">Adaptability</span>
+      <span class="chip">Reliability</span>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>John Patrick Inanod &nbsp;·&nbsp; E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
+  </div>
+
+</div>
+
+<script>
+  function showTab(name, el) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
