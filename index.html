@@ -12,7 +12,9 @@
 
   /* HERO */
   .hero { background: #1A5C3A; padding: 2.5rem 2.5rem 2rem; }
-  .hero-initials { width: 56px; height: 56px; border-radius: 50%; background: #2E7D52; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; color: #A8D5BC; margin-bottom: 1.1rem; }
+  .hero-top { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.1rem; }
+  .hero-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF82; flex-shrink: 0; }
+  .hero-name-block { padding-top: 2px; }
   .hero-name { font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 5px; letter-spacing: -0.01em; }
   .hero-title { font-size: 14px; color: #A8D5BC; margin-bottom: 1.1rem; }
   .hero-bio { font-size: 13.5px; color: #C8E6D4; line-height: 1.65; max-width: 600px; margin-bottom: 1.4rem; }
@@ -105,9 +107,15 @@
 <div class="wrap">
 
   <div class="hero">
-    <div class="hero-initials">JPI</div>
-    <h1 class="hero-name">John Patrick Inanod</h1>
-    <p class="hero-title">E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
+    <div class="hero-top">
+      <!-- PHOTO: upload your photo to GitHub as "photo.jpg" in the same folder as index.html -->
+      <img class="hero-photo" src="photo.jpg" alt="John Patrick Inanod" onerror="this.style.display='none';document.getElementById('initials-fallback').style.display='flex'">
+      <div id="initials-fallback" style="display:none;width:72px;height:72px;border-radius:50%;background:#2E7D52;align-items:center;justify-content:center;font-size:18px;font-weight:500;color:#A8D5BC;border:2px solid #4CAF82;flex-shrink:0;">JPI</div>
+      <div class="hero-name-block">
+        <h1 class="hero-name">John Patrick Inanod</h1>
+        <p class="hero-title">E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
+      </div>
+    </div>
     <p class="hero-bio">I combine e-commerce operations experience with conversion-focused video ad creatives. Most editors don't understand how a DTC brand runs. Most ops specialists can't produce content. I do both — which means I can support your brand end to end.</p>
     <div class="badge-row">
       <span class="badge badge-g">Meta &amp; TikTok ads</span>
@@ -142,6 +150,8 @@
           <div class="p-tag">Meta / TikTok · 15–30 sec</div>
           <div class="p-title">Skincare product ad</div>
           <div class="p-desc">Hook-driven, problem-solution structure. Vertical 9:16 format.</div>
+          <!-- REPLACE video-link-1 with your Google Drive / YouTube / Vimeo URL -->
+          <a class="p-link" id="vid1-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
         </div>
       </div>
       <div class="p-card">
@@ -150,6 +160,8 @@
           <div class="p-tag">UGC-style · 30–45 sec</div>
           <div class="p-title">Authentic product review</div>
           <div class="p-desc">Casual, unpolished-on-purpose. Built to look like organic content.</div>
+          <!-- REPLACE video-link-2 with your Google Drive / YouTube / Vimeo URL -->
+          <a class="p-link" id="vid2-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
         </div>
       </div>
       <div class="p-card">
@@ -158,6 +170,8 @@
           <div class="p-tag">Amazon listing · 30–60 sec</div>
           <div class="p-title">Product listing video</div>
           <div class="p-desc">Clean, benefit-focused. Formatted to Amazon A+ standards.</div>
+          <!-- REPLACE video-link-3 with your Google Drive / YouTube / Vimeo URL -->
+          <a class="p-link" id="vid3-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
         </div>
       </div>
       <div class="p-card">
@@ -343,6 +357,33 @@
     document.getElementById('tab-' + name).classList.add('active');
     el.classList.add('active');
   }
+
+  /*
+  =============================================
+  HOW TO ADD YOUR VIDEOS
+  =============================================
+  When you finish a portfolio video, paste your
+  Google Drive / YouTube / Vimeo share link into
+  the href below, then remove style="display:none"
+  from the matching <a> tag above.
+
+  Video 1 (Meta/TikTok ad):   id="vid1-link"
+  Video 2 (UGC-style):        id="vid2-link"
+  Video 3 (Amazon listing):   id="vid3-link"
+
+  Example:
+  <a class="p-link" id="vid1-link"
+     href="https://drive.google.com/file/d/YOUR_ID/view"
+     target="_blank">Watch video</a>
+
+  HOW TO ADD YOUR PHOTO
+  =============================================
+  1. Name your photo file exactly: photo.jpg
+  2. Upload it to your GitHub repository
+     (same folder as index.html)
+  3. The photo will appear automatically.
+  =============================================
+  */
 </script>
 </body>
 </html>
