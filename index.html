@@ -3,387 +3,620 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>John Patrick Inanod — E-Commerce Video Editor & Ops Specialist</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<title>John Patrick Inanod — Video Editor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f3; color: #1a1a1a; min-height: 100vh; }
-  .wrap { max-width: 860px; margin: 0 auto; background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,0.07); }
-
-  /* HERO */
-  .hero { background: #1A5C3A; padding: 2.5rem 2.5rem 2rem; }
-  .hero-top { display: flex; align-items: center; gap: 1.25rem; margin-bottom: 1.1rem; }
-  .hero-photo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid #4CAF82; flex-shrink: 0; }
-  .hero-name-block { padding-top: 2px; }
-  .hero-name { font-size: 1.75rem; font-weight: 600; color: #fff; margin-bottom: 5px; letter-spacing: -0.01em; }
-  .hero-title { font-size: 14px; color: #A8D5BC; margin-bottom: 1.1rem; }
-  .hero-bio { font-size: 13.5px; color: #C8E6D4; line-height: 1.65; max-width: 600px; margin-bottom: 1.4rem; }
-  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; }
-  .badge { font-size: 11.5px; font-weight: 500; padding: 4px 12px; border-radius: 20px; }
-  .badge-g { background: #2E7D52; color: #A8D5BC; }
-  .badge-a { background: #854F0B; color: #FAC775; }
-  .badge-b { background: #185FA5; color: #B5D4F4; }
-
-  /* CONTACT BAR */
-  .contact-bar { background: #0F3D27; padding: 0.65rem 2.5rem; display: flex; flex-wrap: wrap; gap: 20px; }
-  .contact-item { font-size: 12.5px; color: #6BAF8A; display: flex; align-items: center; gap: 6px; text-decoration: none; }
-  .contact-item:hover { color: #A8D5BC; }
-
-  /* TABS */
-  .nav-tabs { display: flex; border-bottom: 1px solid #e8e8e8; padding: 0 2.5rem; background: #fff; overflow-x: auto; }
-  .nav-tab { font-size: 13.5px; padding: 0.9rem 1.1rem; color: #888; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; transition: color 0.15s; }
-  .nav-tab:hover { color: #1A5C3A; }
-  .nav-tab.active { color: #1A5C3A; border-bottom-color: #1A5C3A; font-weight: 500; }
-
-  /* TAB CONTENT */
-  .tab-content { padding: 2rem 2.5rem; display: none; }
-  .tab-content.active { display: block; }
-
-  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #aaa; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f0f0f0; }
-
-  /* PORTFOLIO GRID */
-  .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 2rem; }
-  .p-card { background: #fff; border: 1px solid #efefef; border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; }
-  .p-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-  .p-thumb { height: 100px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-  .p-thumb-g { background: #EAF3DE; }
-  .p-thumb-b { background: #E6F1FB; }
-  .p-thumb-a { background: #FAEEDA; }
-  .p-thumb-gray { background: #f7f7f5; border-bottom: 1px dashed #ddd; flex-direction: column; gap: 4px; }
-  .p-meta { padding: 0.75rem 0.9rem; }
-  .p-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #bbb; margin-bottom: 4px; }
-  .p-title { font-size: 13.5px; font-weight: 500; color: #1a1a1a; margin-bottom: 4px; }
-  .p-desc { font-size: 12px; color: #777; line-height: 1.5; }
-  .p-link { display: inline-flex; align-items: center; gap: 4px; font-size: 11.5px; color: #1A5C3A; margin-top: 8px; text-decoration: none; font-weight: 500; }
-  .p-link:hover { text-decoration: underline; }
-  .coming-label { font-size: 11px; color: #bbb; }
-
-  /* APPROACH GRID */
-  .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-  .a-card { background: #f7faf8; border-radius: 10px; padding: 1rem; }
-  .a-card-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
-  .a-card-desc { font-size: 12px; color: #666; line-height: 1.55; }
-
-  /* OPS GRID */
-  .ops-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; margin-bottom: 2rem; }
-  .ops-card { background: #f7faf8; border-radius: 10px; padding: 1rem; }
-  .ops-card-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
-  .ops-card-desc { font-size: 12px; color: #666; line-height: 1.55; }
-
-  /* EXPERIENCE */
-  .exp-row { display: flex; gap: 14px; margin-bottom: 1.25rem; padding-bottom: 1.25rem; border-bottom: 1px solid #f0f0f0; }
-  .exp-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 5px; }
-  .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: #2E7D52; flex-shrink: 0; }
-  .exp-line { width: 1px; background: #e8e8e8; flex: 1; margin-top: 5px; }
-  .exp-role { font-size: 14px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
-  .exp-co { font-size: 13px; color: #2E7D52; font-weight: 500; margin-bottom: 3px; }
-  .exp-yr { font-size: 11.5px; color: #aaa; margin-bottom: 8px; }
-  .exp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-  .exp-tag { font-size: 11px; padding: 2px 9px; border-radius: 10px; background: #f0f0f0; color: #666; }
-
-  /* CHIPS */
-  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.5rem; }
-  .chip { font-size: 12px; padding: 4px 12px; border-radius: 20px; border: 1px solid #e8e8e8; color: #555; background: #fafafa; }
-  .chip-g { background: #EAF3DE; border-color: #C0DD97; color: #3B6D11; }
-  .chip-a { background: #FAEEDA; border-color: #FAC775; color: #854F0B; }
-  .chip-b { background: #E6F1FB; border-color: #B5D4F4; color: #185FA5; }
-
-  /* FOOTER */
-  .footer { background: #1A5C3A; padding: 1.25rem 2.5rem; text-align: center; }
-  .footer p { font-size: 12.5px; color: #6BAF8A; }
-
-  @media (max-width: 600px) {
-    .hero, .contact-bar, .tab-content, .nav-tabs { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .hero-name { font-size: 1.4rem; }
-    .portfolio-grid, .ops-grid, .approach-grid { grid-template-columns: 1fr 1fr; }
+  :root{
+    --bg-deep:#0b2c22;
+    --bg-panel:#123a2c;
+    --bg-panel-2:#0e3327;
+    --gold:#c9a227;
+    --gold-bright:#e6c866;
+    --cream:#f3efe6;
+    --sage:#9fb9a9;
+    --line: rgba(243,239,230,0.12);
+    --radius: 2px;
   }
-  @media (max-width: 420px) {
-    .portfolio-grid, .ops-grid, .approach-grid { grid-template-columns: 1fr; }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-deep);
+    color:var(--cream);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-size:0.72rem;
+  }
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  ::selection{ background:var(--gold); color:var(--bg-deep); }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,44,34,0.88);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .nav-mark{
+    font-family:'Fraunces', serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--cream);
+  }
+  .nav-mark span{ color:var(--gold); }
+  .nav-links{ display:flex; gap:36px; }
+  .nav-links a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--sage);
+    transition:color .2s ease;
+    position:relative;
+  }
+  .nav-links a:hover{ color:var(--gold-bright); }
+  .nav-cta{
+    border:1px solid var(--gold);
+    color:var(--gold) !important;
+    padding:9px 18px;
+    border-radius:var(--radius);
+  }
+  .nav-cta:hover{ background:var(--gold); color:var(--bg-deep) !important; }
+  .nav-toggle{ display:none; }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;
+    padding:120px 0 100px;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 700px 400px at 85% -10%, rgba(201,162,39,0.16), transparent 60%),
+      radial-gradient(ellipse 500px 500px at -10% 110%, rgba(201,162,39,0.10), transparent 60%);
+    pointer-events:none;
+  }
+  .hero .wrap{ position:relative; display:grid; grid-template-columns:1.3fr 0.9fr; gap:60px; align-items:center; }
+  .timecode{
+    display:flex; align-items:center; gap:14px;
+    color:var(--gold);
+    margin-bottom:26px;
+  }
+  .timecode .rule{ width:44px; height:1px; background:var(--gold); }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4.2rem);
+    line-height:1.04;
+    color:var(--cream);
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--gold-bright);
+  }
+  .hero p.lede{
+    margin-top:26px;
+    max-width:520px;
+    color:var(--sage);
+    font-size:1.05rem;
+  }
+  .hero-actions{ display:flex; gap:16px; margin-top:40px; }
+  .btn-primary{
+    background:var(--gold);
+    color:var(--bg-deep);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:15px 26px;
+    border-radius:var(--radius);
+    transition:background .2s ease;
+  }
+  .btn-primary:hover{ background:var(--gold-bright); }
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--cream);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:15px 26px;
+    border-radius:var(--radius);
+    transition:border-color .2s ease;
+  }
+  .btn-ghost:hover{ border-color:var(--gold); }
+
+  .hero-frame{
+    position:relative;
+    aspect-ratio: 4/5;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--bg-panel);
+  }
+  .hero-frame img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:grayscale(15%);
+  }
+  .hero-frame .frame-tag{
+    position:absolute; bottom:16px; left:16px;
+    background:rgba(11,44,34,0.85);
+    border:1px solid var(--gold);
+    color:var(--gold-bright);
+    padding:6px 12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+  }
+  .hero-frame .corner{
+    position:absolute; width:18px; height:18px;
+    border:1px solid var(--gold-bright);
+    opacity:0.7;
+  }
+  .corner.tl{ top:14px; left:14px; border-right:none; border-bottom:none; }
+  .corner.br{ bottom:14px; right:14px; border-left:none; border-top:none; }
+
+  /* ---------- STRIP ---------- */
+  .strip{
+    border-bottom:1px solid var(--line);
+    padding:22px 0;
+    background:var(--bg-panel-2);
+  }
+  .strip .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    color:var(--sage);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .strip .dot{ color:var(--gold); margin:0 10px; }
+
+  /* ---------- SECTION HEADER ---------- */
+  .section{ padding:100px 0; }
+  .section-head{ margin-bottom:56px; max-width:640px; }
+  .section-head .timecode{ margin-bottom:18px; }
+  .section-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.6rem); }
+  .section-head p{ color:var(--sage); margin-top:16px; }
+
+  /* ---------- NICHE FILTER ---------- */
+  .filters{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-bottom:44px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:10px 16px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    color:var(--sage);
+    background:transparent;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .filter-btn:hover{ border-color:var(--gold); color:var(--cream); }
+  .filter-btn.active{
+    background:var(--gold);
+    border-color:var(--gold);
+    color:var(--bg-deep);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+  }
+  .card{
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    border-radius:var(--radius);
+    overflow:hidden;
+    transition:transform .25s ease, border-color .25s ease;
+  }
+  .card:hover{ transform:translateY(-4px); border-color:var(--gold); }
+  .card-media{
+    aspect-ratio:16/10;
+    background:var(--bg-panel-2);
+    position:relative;
+    display:flex; align-items:center; justify-content:center;
+    border-bottom:1px solid var(--line);
+  }
+  .card-media .play{
+    width:46px; height:46px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold-bright);
+    font-size:0.9rem;
+    transition:all .2s ease;
+  }
+  .card:hover .play{ background:var(--gold); color:var(--bg-deep); }
+  .card-media .ph-label{
+    position:absolute; top:12px; left:12px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.62rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--sage);
+  }
+  .card-body{ padding:22px; }
+  .card-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+    display:block;
+  }
+  .card h3{ font-size:1.15rem; color:var(--cream); margin-bottom:8px; }
+  .card p{ color:var(--sage); font-size:0.92rem; }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.8fr 1.2fr;
+    gap:70px;
+    align-items:start;
+  }
+  .about-photo{
+    aspect-ratio:3/4;
+    border:1px solid var(--line);
+    background:var(--bg-panel);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .about-photo img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .about-copy p{ color:var(--sage); margin-bottom:20px; max-width:560px; }
+  .about-copy p strong{ color:var(--cream); font-weight:600; }
+
+  .skill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+  .pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:8px 14px;
+    border:1px solid var(--line);
+    color:var(--sage);
+    border-radius:var(--radius);
+  }
+
+  /* ---------- TOOLS ---------- */
+  .tools-band{
+    background:var(--bg-panel-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:70px 0;
+  }
+  .tools-list{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+  }
+  .tool-item{
+    padding:20px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    text-align:center;
+    color:var(--sage);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.03em;
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .tool-item:hover{ border-color:var(--gold); color:var(--cream); }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    text-align:center;
+    padding:110px 0 90px;
+  }
+  .contact h2{ font-size:clamp(2rem, 4vw, 3rem); max-width:680px; margin:0 auto; }
+  .contact p.lede{ color:var(--sage); max-width:480px; margin:22px auto 40px; }
+  .contact-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+  .contact-links{
+    margin-top:50px;
+    display:flex; gap:28px; justify-content:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    color:var(--sage);
+    flex-wrap:wrap;
+  }
+  .contact-links a:hover{ color:var(--gold-bright); }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:30px 0;
+    color:var(--sage);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+  footer .wrap{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .hero .wrap{ grid-template-columns:1fr; }
+    .hero-frame{ order:-1; max-width:360px; margin:0 auto; }
+    .about-grid{ grid-template-columns:1fr; }
+    .about-photo{ max-width:320px; }
+    .grid{ grid-template-columns:repeat(2,1fr); }
+    .tools-list{ grid-template-columns:repeat(2,1fr); }
+    .nav-links{ display:none; }
+  }
+  @media (max-width:560px){
+    .grid{ grid-template-columns:1fr; }
+    .tools-list{ grid-template-columns:1fr 1fr; }
+    .wrap{ padding:0 20px; }
+    .hero{ padding:90px 0 70px; }
+    .section{ padding:70px 0; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-  <div class="hero">
-    <div class="hero-top">
-      <!-- PHOTO: upload your photo to GitHub as "photo.jpg" in the same folder as index.html -->
-      <img class="hero-photo" src="photo.jpg" alt="John Patrick Inanod" onerror="this.style.display='none';document.getElementById('initials-fallback').style.display='flex'">
-      <div id="initials-fallback" style="display:none;width:72px;height:72px;border-radius:50%;background:#2E7D52;align-items:center;justify-content:center;font-size:18px;font-weight:500;color:#A8D5BC;border:2px solid #4CAF82;flex-shrink:0;">JPI</div>
-      <div class="hero-name-block">
-        <h1 class="hero-name">John Patrick Inanod</h1>
-        <p class="hero-title">E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
-      </div>
-    </div>
-    <p class="hero-bio">I combine e-commerce operations experience with conversion-focused video ad creatives. Most editors don't understand how a DTC brand runs. Most ops specialists can't produce content. I do both — which means I can support your brand end to end.</p>
-    <div class="badge-row">
-      <span class="badge badge-g">Meta &amp; TikTok ads</span>
-      <span class="badge badge-g">Amazon A+ content</span>
-      <span class="badge badge-g">UGC-style creatives</span>
-      <span class="badge badge-b">Shopify operations</span>
-      <span class="badge badge-b">Inventory &amp; catalog</span>
-      <span class="badge badge-a">AI-assisted editing</span>
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">JP<span>.</span>INANOD</div>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#tools">Tools</a>
+      <a href="#contact" class="nav-cta">Contact</a>
     </div>
   </div>
+</nav>
 
-  <div class="contact-bar">
-    <a class="contact-item" href="mailto:johnpatrick_inanod@yahoo.com"><i class="ti ti-mail"></i>johnpatrick_inanod@yahoo.com</a>
-    <a class="contact-item" href="tel:+639794244259"><i class="ti ti-phone"></i>+63 979-424-42-59</a>
-    <a class="contact-item" href="https://www.linkedin.com/in/john-patrick-inanod-11828b206/" target="_blank"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
-  </div>
-
-  <div class="nav-tabs">
-    <div class="nav-tab active" onclick="showTab('video', this)">Video editing</div>
-    <div class="nav-tab" onclick="showTab('ops', this)">E-commerce ops</div>
-    <div class="nav-tab" onclick="showTab('exp', this)">Experience</div>
-    <div class="nav-tab" onclick="showTab('tools', this)">Tools &amp; skills</div>
-  </div>
-
-  <!-- VIDEO TAB -->
-  <div id="tab-video" class="tab-content active">
-    <p class="section-label">Ad creatives portfolio</p>
-    <div class="portfolio-grid">
-      <div class="p-card">
-        <div class="p-thumb p-thumb-g"><i class="ti ti-device-mobile" style="font-size:2rem;color:#3B6D11"></i></div>
-        <div class="p-meta">
-          <div class="p-tag">Meta / TikTok · 15–30 sec</div>
-          <div class="p-title">Skincare product ad</div>
-          <div class="p-desc">Hook-driven, problem-solution structure. Vertical 9:16 format.</div>
-          <!-- REPLACE video-link-1 with your Google Drive / YouTube / Vimeo URL -->
-          <a class="p-link" id="vid1-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
-        </div>
-      </div>
-      <div class="p-card">
-        <div class="p-thumb p-thumb-b"><i class="ti ti-video" style="font-size:2rem;color:#185FA5"></i></div>
-        <div class="p-meta">
-          <div class="p-tag">UGC-style · 30–45 sec</div>
-          <div class="p-title">Authentic product review</div>
-          <div class="p-desc">Casual, unpolished-on-purpose. Built to look like organic content.</div>
-          <!-- REPLACE video-link-2 with your Google Drive / YouTube / Vimeo URL -->
-          <a class="p-link" id="vid2-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
-        </div>
-      </div>
-      <div class="p-card">
-        <div class="p-thumb p-thumb-a"><i class="ti ti-shopping-bag" style="font-size:2rem;color:#854F0B"></i></div>
-        <div class="p-meta">
-          <div class="p-tag">Amazon listing · 30–60 sec</div>
-          <div class="p-title">Product listing video</div>
-          <div class="p-desc">Clean, benefit-focused. Formatted to Amazon A+ standards.</div>
-          <!-- REPLACE video-link-3 with your Google Drive / YouTube / Vimeo URL -->
-          <a class="p-link" id="vid3-link" href="#" target="_blank" style="display:none"><i class="ti ti-player-play" style="font-size:13px"></i>Watch video</a>
-        </div>
-      </div>
-      <div class="p-card">
-        <div class="p-thumb p-thumb-gray">
-          <i class="ti ti-plus" style="font-size:1.5rem;color:#ccc"></i>
-          <span class="coming-label">Coming soon</span>
-        </div>
-        <div class="p-meta">
-          <div class="p-tag">YouTube pre-roll · 30–60 sec</div>
-          <div class="p-title">YouTube ad creative</div>
-          <div class="p-desc">Skippable format. Earns attention before the skip button appears.</div>
-        </div>
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="timecode mono"><span class="rule"></span>00:00:00 — VIDEO EDITOR</div>
+      <h1>Cuts that hold<br>attention, <em>whatever</em><br>the platform.</h1>
+      <p class="lede">I edit for e-commerce, social/UGC, corporate, and long-form — bringing an operations-grade eye for structure and pacing to every project, backed by 3+ years running e-commerce storefronts.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary">View the work</a>
+        <a href="#contact" class="btn-ghost">Start a project</a>
       </div>
     </div>
-
-    <p class="section-label">How I approach ad creatives</p>
-    <div class="approach-grid">
-      <div class="a-card">
-        <div class="a-card-title"><i class="ti ti-bolt" style="font-size:16px;color:#2E7D52"></i>Hook first</div>
-        <div class="a-card-desc">Every edit starts with the first 3 seconds. If it doesn't stop the scroll, nothing else matters.</div>
-      </div>
-      <div class="a-card">
-        <div class="a-card-title"><i class="ti ti-arrows-right-left" style="font-size:16px;color:#2E7D52"></i>Problem → solution</div>
-        <div class="a-card-desc">Structure every video around a clear problem the buyer recognizes, then the product as the answer.</div>
-      </div>
-      <div class="a-card">
-        <div class="a-card-title"><i class="ti ti-layers-difference" style="font-size:16px;color:#2E7D52"></i>Multi-format repurposing</div>
-        <div class="a-card-desc">One raw video → Meta ad, TikTok Reel, Amazon listing, YouTube pre-roll. Different structure per platform.</div>
-      </div>
-      <div class="a-card">
-        <div class="a-card-title"><i class="ti ti-chart-line" style="font-size:16px;color:#2E7D52"></i>Conversion first</div>
-        <div class="a-card-desc">I edit for CTR and CVR, not aesthetics. Every second should move the viewer closer to a decision.</div>
-      </div>
+    <div class="hero-frame">
+      <div class="corner tl"></div>
+      <div class="corner br"></div>
+      <!-- Replace src with your profile photo -->
+      <img src="assets/profile.jpg" alt="John Patrick Inanod">
+      <div class="frame-tag mono">John Patrick Inanod</div>
     </div>
   </div>
+</header>
 
-  <!-- OPS TAB -->
-  <div id="tab-ops" class="tab-content">
-    <p class="section-label">What I can handle for your store</p>
-    <div class="ops-grid">
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-package" style="font-size:16px;color:#2E7D52"></i>Order &amp; fulfillment</div>
-        <div class="ops-card-desc">End-to-end order processing, status updates, fulfillment bottleneck resolution for high-volume storefronts.</div>
-      </div>
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-layout" style="font-size:16px;color:#2E7D52"></i>Shopify storefront</div>
-        <div class="ops-card-desc">Product page editing, blog content, high-converting templates, mobile responsiveness across markets.</div>
-      </div>
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-chart-bar" style="font-size:16px;color:#2E7D52"></i>Reporting &amp; data</div>
-        <div class="ops-card-desc">Operational records, performance documentation, weekly ecommerce performance reports.</div>
-      </div>
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-box" style="font-size:16px;color:#2E7D52"></i>Inventory control</div>
-        <div class="ops-card-desc">Stock monitoring, demand forecasting, out-of-stock prevention across product lines.</div>
-      </div>
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-upload" style="font-size:16px;color:#2E7D52"></i>Catalog management</div>
-        <div class="ops-card-desc">Bulk CSV uploads, variant management, category mapping, product data accuracy.</div>
-      </div>
-      <div class="ops-card">
-        <div class="ops-card-title"><i class="ti ti-search" style="font-size:16px;color:#2E7D52"></i>SEO optimization</div>
-        <div class="ops-card-desc">Meta titles, descriptions, image Alt-text optimization for organic ranking and visibility.</div>
-      </div>
-    </div>
-    <p class="section-label">Platforms &amp; tools</p>
-    <div class="chip-row">
-      <span class="chip chip-b">Shopify</span>
-      <span class="chip chip-b">Ecomflow</span>
-      <span class="chip chip-b">Quickbooks</span>
-      <span class="chip chip-b">Notion</span>
-      <span class="chip chip-b">ClickUp</span>
-      <span class="chip chip-a">ChatGPT</span>
-      <span class="chip chip-a">Adobe Firefly</span>
-      <span class="chip chip-a">NanoBanana</span>
-      <span class="chip chip-a">Instantly.ai</span>
-    </div>
+<div class="strip">
+  <div class="wrap">
+    <span>Cavite, Philippines <span class="dot">•</span> Available for freelance</span>
+    <span>E-commerce <span class="dot">•</span> Social/UGC <span class="dot">•</span> Corporate <span class="dot">•</span> Long-form <span class="dot">•</span> Events</span>
   </div>
-
-  <!-- EXPERIENCE TAB -->
-  <div id="tab-exp" class="tab-content">
-    <p class="section-label">Work history</p>
-    <div class="exp-row">
-      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
-      <div>
-        <div class="exp-role">Ecommerce Operations Associate</div>
-        <div class="exp-co">Enord LT</div>
-        <div class="exp-yr">2024 – 2025</div>
-        <div class="exp-tags">
-          <span class="exp-tag">Order processing</span>
-          <span class="exp-tag">Shopify</span>
-          <span class="exp-tag">Storefront optimization</span>
-          <span class="exp-tag">SOPs</span>
-          <span class="exp-tag">Performance reporting</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-row">
-      <div class="exp-dot-col"><div class="exp-dot"></div><div class="exp-line"></div></div>
-      <div>
-        <div class="exp-role">Virtual Assistant</div>
-        <div class="exp-co">Chazak Virtual Solutions</div>
-        <div class="exp-yr">2024</div>
-        <div class="exp-tags">
-          <span class="exp-tag">SEO strategy</span>
-          <span class="exp-tag">Inventory control</span>
-          <span class="exp-tag">Catalog management</span>
-          <span class="exp-tag">CSV bulk uploads</span>
-        </div>
-      </div>
-    </div>
-    <div class="exp-row">
-      <div class="exp-dot-col"><div class="exp-dot"></div></div>
-      <div>
-        <div class="exp-role">Customer Service Representative</div>
-        <div class="exp-co">Foundever, Inc</div>
-        <div class="exp-yr">2022 – 2023</div>
-        <div class="exp-tags">
-          <span class="exp-tag">Multi-channel support</span>
-          <span class="exp-tag">Retention &amp; conversion</span>
-          <span class="exp-tag">Email / live chat / social</span>
-        </div>
-      </div>
-    </div>
-    <p class="section-label" style="margin-top:1.75rem">Education</p>
-    <div class="exp-row" style="border:none;margin:0;padding:0">
-      <div class="exp-dot-col"><div class="exp-dot"></div></div>
-      <div>
-        <div class="exp-role">BS Information Technology</div>
-        <div class="exp-co">Philippine Christian University</div>
-        <div class="exp-yr">2008 – 2011</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TOOLS TAB -->
-  <div id="tab-tools" class="tab-content">
-    <p class="section-label">Video editing</p>
-    <div class="chip-row">
-      <span class="chip chip-g">CapCut</span>
-      <span class="chip chip-g">DaVinci Resolve</span>
-      <span class="chip chip-g">Descript</span>
-    </div>
-    <p class="section-label">AI tools</p>
-    <div class="chip-row">
-      <span class="chip chip-a">HeyGen</span>
-      <span class="chip chip-a">Runway</span>
-      <span class="chip chip-a">Pika</span>
-      <span class="chip chip-a">ChatGPT</span>
-      <span class="chip chip-a">Adobe Firefly</span>
-      <span class="chip chip-a">NanoBanana</span>
-      <span class="chip chip-a">Instantly.ai</span>
-    </div>
-    <p class="section-label">E-commerce ops</p>
-    <div class="chip-row">
-      <span class="chip chip-b">Shopify</span>
-      <span class="chip chip-b">Ecomflow</span>
-      <span class="chip chip-b">Quickbooks</span>
-      <span class="chip chip-b">Notion</span>
-      <span class="chip chip-b">ClickUp</span>
-    </div>
-    <p class="section-label">Soft skills</p>
-    <div class="chip-row">
-      <span class="chip">Analytical thinking</span>
-      <span class="chip">Written communication</span>
-      <span class="chip">Problem solving</span>
-      <span class="chip">Time management</span>
-      <span class="chip">Adaptability</span>
-      <span class="chip">Reliability</span>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>John Patrick Inanod &nbsp;·&nbsp; E-Commerce Video Editor &amp; Operations Specialist &nbsp;·&nbsp; Cavite, Philippines</p>
-  </div>
-
 </div>
 
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="timecode mono"><span class="rule"></span>00:01:00 — SELECTED WORK</div>
+      <h2>Six edits, five niches.</h2>
+      <p>Real briefs and sample pieces built to show range — filter by niche or scroll through everything.</p>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      <button class="filter-btn" data-filter="social">Social / UGC</button>
+      <button class="filter-btn" data-filter="corporate">Corporate</button>
+      <button class="filter-btn" data-filter="longform">Long-form</button>
+      <button class="filter-btn" data-filter="event">Event</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <div class="card" data-cat="ecommerce social">
+        <a href="VIDEO_LINK_1" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:00:15</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">E-commerce · Meta/TikTok Ad</span>
+          <h3>Skincare Product Ad</h3>
+          <p>Scroll-stopping vertical cut for paid social — hook, benefit stack, CTA, built for a 15-second attention span.</p>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ecommerce social">
+        <a href="VIDEO_LINK_2" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:00:22</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">Social / UGC · Hair Care</span>
+          <h3>UGC-Style Hair Care Ad</h3>
+          <p>Creator-style testimonial edit — natural pacing, on-screen captions, native feel for TikTok and Reels.</p>
+        </div>
+      </div>
+
+      <div class="card" data-cat="ecommerce">
+        <a href="VIDEO_LINK_3" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:00:30</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">E-commerce · Amazon Listing</span>
+          <h3>Amazon Product Listing Video</h3>
+          <p>Feature-first edit built to Amazon's spec — clear callouts, lifestyle b-roll, conversion-focused structure.</p>
+        </div>
+      </div>
+
+      <div class="card" data-cat="corporate">
+        <a href="VIDEO_LINK_4" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:00:40</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">Corporate · Explainer</span>
+          <h3>Brand Explainer Sample</h3>
+          <p>Clean, brand-safe pacing with lower-thirds and voiceover — built for a company page or sales deck.</p>
+        </div>
+      </div>
+
+      <div class="card" data-cat="longform">
+        <a href="VIDEO_LINK_5" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:01:10</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">Long-form · YouTube Cutdown</span>
+          <h3>Vlog Highlight Cut</h3>
+          <p>Longer footage trimmed into a tight narrative arc — pacing built to hold a YouTube audience past the intro.</p>
+        </div>
+      </div>
+
+      <div class="card" data-cat="event">
+        <a href="VIDEO_LINK_6" target="_blank">
+          <div class="card-media">
+            <span class="ph-label mono">00:00:45</span>
+            <div class="play">▶</div>
+          </div>
+        </a>
+        <div class="card-body">
+          <span class="card-tag">Event · Highlight Reel</span>
+          <h3>Milestone Highlight Reel</h3>
+          <p>Music-driven cutting with emotional beats mapped to the track — built for a celebration or occasion recap.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <!-- Replace src with your profile photo -->
+      <img src="assets/profile.jpg" alt="John Patrick Inanod">
+    </div>
+    <div class="about-copy">
+      <div class="timecode mono"><span class="rule"></span>00:02:00 — ABOUT</div>
+      <h2 style="margin-bottom:24px;">From storefront operations to the timeline.</h2>
+      <p><strong>I spent three years running the back end of e-commerce brands</strong> — Shopify storefronts, order fulfillment, catalog and SEO — before moving into video editing. That background shows up in how I edit: I think about conversion, attention spans, and platform specs, not just what looks good.</p>
+      <p>I now edit across e-commerce ads, UGC/social content, corporate explainers, long-form YouTube cutdowns, and event highlight reels — using a fully practical, free-tool workflow so I can move fast without depending on paid AI tools.</p>
+      <div class="skill-row">
+        <span class="pill">CapCut</span>
+        <span class="pill">Pexels / Pixabay</span>
+        <span class="pill">Adobe Firefly</span>
+        <span class="pill">Photoshop</span>
+        <span class="pill">Text-to-Speech VO</span>
+        <span class="pill">Shopify</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tools-band" id="tools">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px;">
+      <div class="timecode mono"><span class="rule"></span>00:03:00 — TOOLS &amp; PROCESS</div>
+      <h2>How each edit gets made.</h2>
+    </div>
+    <div class="tools-list">
+      <div class="tool-item">Script &amp; Shot List</div>
+      <div class="tool-item">Pexels B-Roll</div>
+      <div class="tool-item">CapCut Editing</div>
+      <div class="tool-item">Built-in TTS VO</div>
+      <div class="tool-item">Adobe Firefly</div>
+      <div class="tool-item">Photoshop</div>
+      <div class="tool-item">Platform Spec Check</div>
+      <div class="tool-item">Client Revisions</div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="timecode mono" style="justify-content:center;"><span class="rule"></span>00:04:00 — CONTACT</div>
+    <h2>Have a brand, brief, or footage that needs a cut?</h2>
+    <p class="lede">Send over the details and I'll get back to you — usually within a day.</p>
+    <div class="contact-actions">
+      <a href="mailto:johnpatrick_inanod@yahoo.com" class="btn-primary">Email me</a>
+      <a href="https://www.linkedin.com/in/john-patrick-inanod-11828b206" target="_blank" class="btn-ghost">LinkedIn</a>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:johnpatrick_inanod@yahoo.com">johnpatrick_inanod@yahoo.com</a>
+      <a href="tel:+639794424259">+63 979 424 4259</a>
+      <span>Cavite, Philippines</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 John Patrick Inanod</span>
+    <span>Video Editor · E-commerce · Social · Corporate · Long-form · Events</span>
+  </div>
+</footer>
+
 <script>
-  function showTab(name, el) {
-    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    el.classList.add('active');
-  }
-
-  /*
-  =============================================
-  HOW TO ADD YOUR VIDEOS
-  =============================================
-  When you finish a portfolio video, paste your
-  Google Drive / YouTube / Vimeo share link into
-  the href below, then remove style="display:none"
-  from the matching <a> tag above.
-
-  Video 1 (Meta/TikTok ad):   id="vid1-link"
-  Video 2 (UGC-style):        id="vid2-link"
-  Video 3 (Amazon listing):   id="vid3-link"
-
-  Example:
-  <a class="p-link" id="vid1-link"
-     href="https://drive.google.com/file/d/YOUR_ID/view"
-     target="_blank">Watch video</a>
-
-  HOW TO ADD YOUR PHOTO
-  =============================================
-  1. Name your photo file exactly: photo.jpg
-  2. Upload it to your GitHub repository
-     (same folder as index.html)
-  3. The photo will appear automatically.
-  =============================================
-  */
+  const buttons = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.card');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const cats = card.dataset.cat.split(' ');
+        if(filter === 'all' || cats.includes(filter)){
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 </script>
+
 </body>
 </html>
